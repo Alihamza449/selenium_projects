@@ -1,0 +1,25 @@
+package pom.framework.TestCases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import pom.framework.libs.pageobjects.YahooHomePage;
+
+public class SearchTest1 {
+
+	public static WebDriver driver = new ChromeDriver();
+	public static YahooHomePage home = new YahooHomePage(driver);
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hamza\\Desktop\\SQA\\Jar Fileschromedriver.exe");
+
+		driver.navigate().to("http://www.yahoo.com");
+
+		home.yahooSearch("JXL and Selenium Tutorials ");
+
+		Thread.sleep(5000);
+
+		driver.quit();
+	}
+
+}
