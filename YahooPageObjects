@@ -1,0 +1,26 @@
+package pom.framework.libs.pageobjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class YahooHomePage {
+
+	// THIS CONSTRUCTOR WILL INITIALIZE MY OBJECTS IN THIS PAGE
+	public YahooHomePage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(name = "p")
+	public static WebElement txtSearch;
+
+	@FindBy(id = "search-submit")
+	public static WebElement btnSearch;
+
+	public void yahooSearch(String searchText) {
+		txtSearch.sendKeys(searchText);
+		btnSearch.click();
+	}
+
+}
